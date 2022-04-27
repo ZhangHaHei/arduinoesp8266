@@ -24,7 +24,7 @@ void setup()
     {
         Serial.println("ATE0设置");
     }
-    softSerial.println("AT+TCDEVINFOSET=1,\"2IUBPL6QC1\",\"dev_1\",\"d/F9wK2th/V8tXiyZmGfSA==\"");
+    softSerial.println("AT+TCDEVINFOSET=1,\"*****\",\"dev_1\",\"*****"");
     delay(500);
     softSerial.println("AT+TCMQTTCONN=1,5000,240,0,1");
     delay(500);
@@ -93,7 +93,7 @@ void loop()
 
 String upProperty()
 {
-    String upTopic = "AT+TCMQTTPUB=\"$thing/up/property/2IUBPL6QC1/dev_1\",0,";
+    String upTopic = "AT+TCMQTTPUB=\"$thing/up/property/*****/dev_1\",0,";
     String content = "\"{\\\"method\\\":\\\"report\\\"\\,\\\"clientToken\\\":\\\"\\\"\\,\\\"params\\\":{\\\"redled\\\":";
     content += ledState;
     content += "\\,\\\"tem\\\":";
