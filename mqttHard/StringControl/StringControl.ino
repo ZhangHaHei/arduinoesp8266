@@ -8,7 +8,7 @@ float Temperature = 0;
 
 String upProperty()
 {
-    String upTopic = "\"$thing/up/property/2IUBPL6QC1/dev_1\",0,";
+    String upTopic = "\"$thing/up/property/*****/dev_1\",0,";
     String content = "\"{\\\"method\\\":\\\"report\\\"\\,\\\"clientToken\\\":\\\"\\\"\\,\\\"params\\\":{\\\"redled\\\":";
     content += ledState;
     content += "\\,\\\"tem\\\":";
