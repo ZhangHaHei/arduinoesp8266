@@ -40,11 +40,11 @@ void setup()
     {
         Serial.println("ATE0设置");
     }
-    softSerial.println("AT+TCDEVINFOSET=1,\"2IUBPL6QC1\",\"dev_1\",\"d/F9wK2th/V8tXiyZmGfSA==\"");
+    softSerial.println("AT+TCDEVINFOSET=1,\"****",\"dev_1\",\"******"");
     delay(500);
     softSerial.println("AT+TCMQTTCONN=1,5000,240,0,1");
     delay(500);
-    softSerial.println("AT+TCMQTTSUB=\"$thing/down/property/2IUBPL6QC1/dev_1\",0");
+    softSerial.println("AT+TCMQTTSUB=\"$thing/down/property/******/dev_1\",0");
     delay(500);
     if (softSerial.find("OK"))
     {
@@ -61,7 +61,7 @@ void loop()
     if (millis() - lastmin >= 4000)
     {
         lastmin = millis();
-        String upTopic = "AT+TCMQTTPUB=\"$thing/up/property/2IUBPL6QC1/dev_1\",0,";
+        String upTopic = "AT+TCMQTTPUB=\"$thing/up/property/******/dev_1\",0,";
         String property = upProperty();
         Serial.println(upTopic + property);
         softSerial.println(upTopic + property);
